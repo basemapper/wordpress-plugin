@@ -15,12 +15,12 @@
  * @wordpress-plugin
  * Plugin Name:       Basemapper
  * Plugin URI:        https://basemapper.com
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Map your products and services.
  * Version:           1.0.0
  * Author:            Jordan Humphreys
  * Author URI:        https://basemapper.com
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           LGPL-3.0+
+ * License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
  * Text Domain:       basemapper
  * Domain Path:       /languages
  */
