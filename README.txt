@@ -49,11 +49,7 @@ token at https://account.mapbox.com/access-tokens/.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Add a store locator to your site in minutes. Manage locations, store hours, and more all in one place.
 
 == Changelog ==
 
