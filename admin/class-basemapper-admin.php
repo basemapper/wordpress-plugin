@@ -149,7 +149,7 @@ class Basemapper_Admin {
 	 */
 
 	public function display_plugin_setup_page() {
-    	include_once( 'partials/basemapper-admin-display.php' );
+    include_once( 'partials/basemapper-admin-display.php' );
 	}
 	
 	public function options_update() {
