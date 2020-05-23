@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Basemapper
- * Plugin URI:        https://basemapper.com
+ * Plugin URI:        https://github.com/basemapper/wordpress-plugin
  * Description:       Map your products and services.
  * Version:           1.0.0
  * Author:            Jordan Humphreys

@@ -26,8 +26,7 @@ Installation should take only a few minutes.
 
 1. Upload the `basemapper` plugin to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
-4. You can now access the Basemapper admin panel under `Settings -> Basemapper`. From there, you can
+3. You can now access the Basemapper admin panel under `Settings -> Basemapper`. From there, you can
 add a global default Map ID from https://basemapper.com/dashboard. You can find your Map ID on the
 General Settings tab for your map. 
 
