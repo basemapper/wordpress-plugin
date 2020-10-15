@@ -5,11 +5,11 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://basemapper.com
+ * @link       https://boldmapper.com
  * @since      1.0.0
  *
- * @package    Basemapper
- * @subpackage Basemapper/admin/partials
+ * @package    Boldmapper
+ * @subpackage Boldmapper/admin/partials
  */
 ?>
 
@@ -17,12 +17,12 @@
 
     <h2><?php echo esc_html(get_admin_page_title()); ?></h2>
 
-    <form method="post" name="basemapper_options" action="options.php">
+    <form method="post" name="boldmapper_options" action="options.php">
 		<?php
         //Grab all options
         $options = get_option($this->plugin_name);
 
-        // Basemapper options
+        // Boldmapper options
         $map_id = $options['map_id'];
     ?>
 
@@ -33,7 +33,7 @@
     <!-- load jQuery from CDN -->
 
     <fieldset>
-        <p>Enter your basemapper map ID from <a href="https://basemapper.com/dashboard">the dashboard</a>.</p>
+        <p>Enter your boldmapper map ID from <a href="https://boldmapper.com/dashboard">the dashboard</a>.</p>
         <legend class="screen-reader-text"><span><?php _e('Enter your Map ID', $this->plugin_name); ?></span></legend>
         <input type="text" class="regular-text" id="<?php echo $this->plugin_name; ?>-map_id" name="<?php echo $this->plugin_name; ?>[map_id]" value="<?php echo $map_id ?>"/>
     </fieldset>

@@ -1,12 +1,12 @@
 <?php
 
-class Basemapper_Widget extends WP_Widget {
+class Boldmapper_Widget extends WP_Widget {
 
 	// Main constructor
 	public function __construct() {
 		parent::__construct(
-		'basemapper_widget',
-		__( 'Basemapper Store Locator', 'text_domain' ),
+		'boldmapper_widget',
+		__( 'Boldmapper Store Locator', 'text_domain' ),
 		array(
 			'customize_selective_refresh' => true,
 		)
@@ -15,13 +15,13 @@ class Basemapper_Widget extends WP_Widget {
 
 	// The widget form (for the backend )
 	public function form( $instance ) {
-		$options = get_option('basemapper');
+		$options = get_option('boldmapper');
 
 	// Set widget defaults
 	$defaults = array(
 		'map_id'    => $options['map_id'],
 	);
-	
+
 	// Parse current settings with defaults
 	extract( wp_parse_args( ( array ) $instance, $defaults ) ); ?>
 
@@ -56,7 +56,7 @@ class Basemapper_Widget extends WP_Widget {
 
 			// Display widget title if defined
 			if ( $map_id ) {
-				echo '<div data-basemapper-map-id="' . $map_id . '"></div>';
+				echo '<div data-boldmapper-map-id="' . $map_id . '"></div>';
 			}
 
 		echo '</div>';
@@ -67,7 +67,7 @@ class Basemapper_Widget extends WP_Widget {
 	}
 
 }
-function register_basemapper_widget() {
-	register_widget( 'Basemapper_Widget' );
+function register_boldmapper_widget() {
+	register_widget( 'Boldmapper_Widget' );
 }
-add_action( 'widgets_init', 'register_basemapper_widget' );
+add_action( 'widgets_init', 'register_boldmapper_widget' );

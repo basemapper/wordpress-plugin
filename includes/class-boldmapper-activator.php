@@ -3,11 +3,11 @@
 /**
  * Fired during plugin activation
  *
- * @link       https://basemapper.com
+ * @link       https://boldmapper.com
  * @since      1.0.0
  *
- * @package    Basemapper
- * @subpackage Basemapper/includes
+ * @package    Boldmapper
+ * @subpackage Boldmapper/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Basemapper
- * @subpackage Basemapper/includes
- * @author     Jordan Humphreys <engineering@basemapper.com>
+ * @package    Boldmapper
+ * @subpackage Boldmapper/includes
+ * @author     Jordan Humphreys <engineering@boldmapper.com>
  */
-class Basemapper_Activator {
+class Boldmapper_Activator {
 
 	/**
 	 * Short Description. (use period)

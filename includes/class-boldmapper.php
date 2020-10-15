@@ -6,11 +6,11 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://basemapper.com
+ * @link       https://boldmapper.com
  * @since      1.0.0
  *
- * @package    Basemapper
- * @subpackage Basemapper/includes
+ * @package    Boldmapper
+ * @subpackage Boldmapper/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Basemapper
- * @subpackage Basemapper/includes
- * @author     Jordan Humphreys <engineering@basemapper.com>
+ * @package    Boldmapper
+ * @subpackage Boldmapper/includes
+ * @author     Jordan Humphreys <engineering@boldmapper.com>
  */
-class Basemapper {
+class Boldmapper {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Basemapper {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Basemapper_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Boldmapper_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,12 +67,12 @@ class Basemapper {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'BASEMAPPER_VERSION' ) ) {
-			$this->version = BASEMAPPER_VERSION;
+		if ( defined( 'BOLDMAPPER_VERSION' ) ) {
+			$this->version = BOLDMAPPER_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'basemapper';
+		$this->plugin_name = 'boldmapper';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Basemapper {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Basemapper_Loader. Orchestrates the hooks of the plugin.
-	 * - Basemapper_i18n. Defines internationalization functionality.
-	 * - Basemapper_Admin. Defines all hooks for the admin area.
-	 * - Basemapper_Public. Defines all hooks for the public side of the site.
+	 * - Boldmapper_Loader. Orchestrates the hooks of the plugin.
+	 * - Boldmapper_i18n. Defines internationalization functionality.
+	 * - Boldmapper_Admin. Defines all hooks for the admin area.
+	 * - Boldmapper_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,35 +103,35 @@ class Basemapper {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-basemapper-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-boldmapper-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-basemapper-i18n.php';
-		
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-basemapper-widget.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-boldmapper-i18n.php';
+
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-boldmapper-widget.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-basemapper-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-boldmapper-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-basemapper-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-boldmapper-public.php';
 
-		$this->loader = new Basemapper_Loader();
+		$this->loader = new Boldmapper_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Basemapper_i18n class in order to set the domain and to register the hook
+	 * Uses the Boldmapper_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -139,7 +139,7 @@ class Basemapper {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Basemapper_i18n();
+		$plugin_i18n = new Boldmapper_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -154,14 +154,14 @@ class Basemapper {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Basemapper_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Boldmapper_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		
+
 		// Save/Update our plugin options
 		$this->loader->add_action('admin_init', $plugin_admin, 'options_update');
-		
+
 		// Add menu item
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_admin_menu' );
 
@@ -180,22 +180,22 @@ class Basemapper {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Basemapper_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Boldmapper_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		
+
 		$options = get_option($this->get_plugin_name());
-		
-		function render_basemapper( $atts ) {
+
+		function render_boldmapper( $atts ) {
 	$a = shortcode_atts( array(
 		'map' => $options['map_id'],
 	), $atts );
 
-	return '<div data-basemapper-map-id="' . $a['map'] . '"></div>';
+	return '<div data-boldmapper-map-id="' . $a['map'] . '"></div>';
 }
-		add_shortcode( 'basemapper', 'render_basemapper' );
-// 		$this->loader->add_action( 'widgets_init', $plugin_public, 'register_basemapper_widget' );
+		add_shortcode( 'boldmapper', 'render_boldmapper' );
+// 		$this->loader->add_action( 'widgets_init', $plugin_public, 'register_boldmapper_widget' );
 	}
 
 	/**
@@ -222,7 +222,7 @@ class Basemapper {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Basemapper_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Boldmapper_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

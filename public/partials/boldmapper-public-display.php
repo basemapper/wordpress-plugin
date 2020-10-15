@@ -5,11 +5,11 @@
  *
  * This file is used to markup the public-facing aspects of the plugin.
  *
- * @link       https://basemapper.com
+ * @link       https://boldmapper.com
  * @since      1.0.0
  *
- * @package    Basemapper
- * @subpackage Basemapper/public/partials
+ * @package    Boldmapper
+ * @subpackage Boldmapper/public/partials
  */
 ?>
 

@@ -3,11 +3,11 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://basemapper.com
+ * @link       https://boldmapper.com
  * @since      1.0.0
  *
- * @package    Basemapper
- * @subpackage Basemapper/admin
+ * @package    Boldmapper
+ * @subpackage Boldmapper/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Basemapper
- * @subpackage Basemapper/admin
- * @author     Jordan Humphreys <engineering@basemapper.com>
+ * @package    Boldmapper
+ * @subpackage Boldmapper/admin
+ * @author     Jordan Humphreys <engineering@boldmapper.com>
  */
-class Basemapper_Admin {
+class Boldmapper_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +65,15 @@ class Basemapper_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Basemapper_Loader as all of the hooks are defined
+		 * defined in Boldmapper_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Basemapper_Loader will then create the relationship
+		 * The Boldmapper_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/basemapper-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/boldmapper-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,21 +88,21 @@ class Basemapper_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Basemapper_Loader as all of the hooks are defined
+		 * defined in Boldmapper_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Basemapper_Loader will then create the relationship
+		 * The Boldmapper_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/basemapper-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/boldmapper-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
-	
+
 	/**
 	*
-	* admin/class-basemapper-admin.php - Don't add this
+	* admin/class-boldmapper-admin.php - Don't add this
 	*
 	**/
 
@@ -122,7 +122,7 @@ class Basemapper_Admin {
      	*        Administration Menus: http://codex.wordpress.org/Administration_Menus
      	*
      	*/
-    	add_options_page( 'Basemapper Setup', 'Basemapper', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page') );
+    	add_options_page( 'Boldmapper Setup', 'Boldmapper', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page') );
 	}
 
  	/**
@@ -136,7 +136,7 @@ class Basemapper_Admin {
     	*  Documentation : https://codex.wordpress.org/Plugin_API/Filter_Reference/plugin_action_links_(plugin_file_name)
     	*/
    		$settings_link = array(
-    		'<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_name ) . '">' . __('Settings', $this->basemapper) . '</a>',
+    		'<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_name ) . '">' . __('Settings', $this->boldmapper) . '</a>',
    		);
    		return array_merge(  $settings_link, $links );
 
@@ -149,18 +149,18 @@ class Basemapper_Admin {
 	 */
 
 	public function display_plugin_setup_page() {
-    include_once( 'partials/basemapper-admin-display.php' );
+    include_once( 'partials/boldmapper-admin-display.php' );
 	}
-	
+
 	public function options_update() {
     register_setting($this->plugin_name, $this->plugin_name, array($this, 'validate'));
  }
-	
+
 	public function validate($input) {
-    // All checkboxes inputs        
+    // All checkboxes inputs
     $valid = array();
 
-    //Basemapper
+    //Boldmapper
     $valid['map_id'] = (isset($input['map_id']) && !empty($input['map_id'])) ? $input['map_id'] : NULL;
 
     return $valid;

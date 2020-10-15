@@ -8,20 +8,20 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://basemapper.com
+ * @link              https://boldmapper.com
  * @since             1.0.0
- * @package           Basemapper
+ * @package           Boldmapper
  *
  * @wordpress-plugin
- * Plugin Name:       Basemapper
- * Plugin URI:        https://github.com/basemapper/wordpress-plugin
+ * Plugin Name:       Boldmapper
+ * Plugin URI:        https://github.com/boldmapper/wordpress-plugin
  * Description:       Map your products and services.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Jordan Humphreys
- * Author URI:        https://basemapper.com
+ * Author URI:        https://boldmapper.com
  * License:           LGPL-3.0+
  * License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
- * Text Domain:       basemapper
+ * Text Domain:       boldmapper
  * Domain Path:       /languages
  */
 
@@ -35,34 +35,34 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'BASEMAPPER_VERSION', '1.0.0' );
+define( 'BOLDMAPPER_VERSION', '1.0.1' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-basemapper-activator.php
+ * This action is documented in includes/class-boldmapper-activator.php
  */
-function activate_basemapper() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-basemapper-activator.php';
-	Basemapper_Activator::activate();
+function activate_boldmapper() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-boldmapper-activator.php';
+	Boldmapper_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-basemapper-deactivator.php
+ * This action is documented in includes/class-boldmapper-deactivator.php
  */
-function deactivate_basemapper() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-basemapper-deactivator.php';
-	Basemapper_Deactivator::deactivate();
+function deactivate_boldmapper() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-boldmapper-deactivator.php';
+	Boldmapper_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_basemapper' );
-register_deactivation_hook( __FILE__, 'deactivate_basemapper' );
+register_activation_hook( __FILE__, 'activate_boldmapper' );
+register_deactivation_hook( __FILE__, 'deactivate_boldmapper' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-basemapper.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-boldmapper.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-basemapper.php';
  *
  * @since    1.0.0
  */
-function run_basemapper() {
+function run_boldmapper() {
 
-	$plugin = new Basemapper();
+	$plugin = new Boldmapper();
 	$plugin->run();
 
 }
-run_basemapper();
+run_boldmapper();

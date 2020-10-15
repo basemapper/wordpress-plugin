@@ -3,11 +3,11 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://basemapper.com
+ * @link       https://boldmapper.com
  * @since      1.0.0
  *
- * @package    Basemapper
- * @subpackage Basemapper/includes
+ * @package    Boldmapper
+ * @subpackage Boldmapper/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Basemapper
- * @subpackage Basemapper/includes
- * @author     Jordan Humphreys <engineering@basemapper.com>
+ * @package    Boldmapper
+ * @subpackage Boldmapper/includes
+ * @author     Jordan Humphreys <engineering@boldmapper.com>
  */
-class Basemapper_Loader {
+class Boldmapper_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.
